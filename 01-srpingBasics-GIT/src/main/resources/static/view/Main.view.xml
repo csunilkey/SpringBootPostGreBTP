@@ -1,0 +1,86 @@
+<mvc:View xmlns:mvc = "sap.ui.core.mvc" xmlns = "sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+			controllerName = "sunil.controller.Main" >			
+ 
+ <Page title = "Welcome to My Sample GIT App">
+ 	<content>
+ 	
+ 		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Vendor Data"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Company Name" />
+				<Input id="name" value="{/postPayLoad/companyName}" />
+				
+				<Label text="First Name" />
+				<Input value="{/postPayLoad/firstName}" />
+				
+				<Label text="Last Name" />
+				<Input value="{/postPayLoad/lastName}">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				
+				<Label text="Website" />
+				<Input value="{/postPayLoad/website}" />
+				
+				<Label text="Email" />
+				<Input value="{/postPayLoad/email}" />
+				
+				<Label text="GST No." />
+				<Input value="{/postPayLoad/gstNo}" />
+				
+
+			</f:content>
+		</f:SimpleForm>
+		<Button text = "Save" press = "onSaveData" />
+	</VBox>
+ 	
+ 		<Button text = "Load Data" press = "onLoadData" />
+ 		<Button text = "Delete" press = "onDeletion" />
+ 		
+ 		<Table id = "idTableM" items = "{vendDet>/}" mode = "SingleSelect" includeItemInSelection = "true" selectionChange = "getItemToDelete">
+ 			<columns>
+ 				<Column>
+ 					<Text text = "Id" />
+ 				</Column>
+ 					
+ 				<Column>
+ 					<Text text = "Company Name" />
+ 				</Column>
+ 					
+ 				<Column>
+ 					<Text text = "First Name" />
+ 				</Column>
+ 			</columns>
+ 			
+ 			<items>
+ 				<ColumnListItem>
+ 					<cells>
+ 						<Text text = "{vendDet>id}" />
+ 						<Text text = "{vendDet>companyName}" />
+ 						<Text text = "{vendDet>firstName}" />
+ 					</cells> 				
+ 				</ColumnListItem>
+ 			</items>
+ 		
+ 		</Table>
+ 	</content>
+ </Page>
+
+</mvc:View>

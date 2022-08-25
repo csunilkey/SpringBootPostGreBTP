@@ -1,0 +1,40 @@
+<html>
+
+
+<script src = "https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+		data-sap-ui-libs = "sap.m" 
+		data-sap-ui-theme = "sap_bluecrystal"
+		data-sap-ui-xx-bindingSyntax = "complex"
+		data-sap-ui-resourceroots = '{"sunil": "./"}'>
+	
+</script>
+
+<script>
+	
+	/* var oButton = new sap.m.Button({text: "Click Me", press: function() {
+		alert("UI5 working");
+	}});
+	
+	oButton.placeAt("content"); */
+	
+	var oView = new sap.ui.view({
+		viewName: "sunil.view.App",
+		type: "XML"
+	});
+	
+	var oMainView = new sap.ui.view({
+		viewName: "sunil.view.Main",
+		type: "XML"
+	});
+	
+	oView.byId("idApp").addPage(oMainView);
+	oView.placeAt("content");
+
+</script>
+
+<body class = "sapUiBody">
+	<div id = "content" >
+	</div>
+</body>
+
+</html>
